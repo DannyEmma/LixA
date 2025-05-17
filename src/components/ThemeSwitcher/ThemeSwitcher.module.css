@@ -1,0 +1,8 @@
+.theme_switcher {
+  transition: all 0.3s;
+}
+.theme_switcher:hover {
+  width: 34px;
+  height: 34px;
+  cursor: pointer;
+}

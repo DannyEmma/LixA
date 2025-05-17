@@ -1,0 +1,10 @@
+.footer {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  color: var(--text-color-primary);
+}
+.copyright {
+  display: flex;
+  gap: 3px;
+}

@@ -1,0 +1,42 @@
+/* ----- Theme Colors ----- */
+:root {
+  --bg-gradient-url: url('/img/dark-gradient.svg');
+  --title-color: white;
+  --text-color-primary: #f2efe9;
+  --secondary-color: #97a33e;
+  --textarea-color: #629ba1;
+}
+.light-theme {
+  --bg-gradient-url: url('/img/light-gradient.svg');
+  --title-color: #2c2c2c;
+  --text-color-primary: #2c2c2c;
+  --textarea-color: #f1f7f8;
+}
+
+/* ----- Reset CSS ----- */
+* {
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  color: inherit;
+}
+html,
+body {
+  height: 100%;
+}
+button {
+  background: inherit;
+  border: inherit;
+}
+
+/* ----- Global CSS ----- */
+body {
+  background-image: var(--bg-gradient-url);
+  background-size: cover;
+}
+.container {
+  max-width: 1500px;
+  margin: auto;
+  height: 100%;
+  padding: 0 20px;
+}
