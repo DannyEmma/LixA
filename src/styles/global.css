@@ -2,14 +2,14 @@
 :root {
   --bg-gradient-url: url('/img/dark-gradient.svg');
   --title-color: white;
-  --text-color-primary: #f2efe9;
+  --primary-text-color: #f2efe9;
   --secondary-color: #97a33e;
   --textarea-color: #629ba1;
 }
 .light-theme {
   --bg-gradient-url: url('/img/light-gradient.svg');
   --title-color: #2c2c2c;
-  --text-color-primary: #2c2c2c;
+  --primary-text-color: #2c2c2c;
   --textarea-color: #f1f7f8;
 }
 
@@ -19,6 +19,10 @@
   margin: 0;
   text-decoration: none;
   color: inherit;
+  user-select: none;
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE/Edge */
 }
 html,
 body {
@@ -27,6 +31,9 @@ body {
 button {
   background: inherit;
   border: inherit;
+}
+textarea {
+  font-family: inherit;
 }
 
 /* ----- Global CSS ----- */

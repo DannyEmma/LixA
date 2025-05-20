@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-between;
   font-size: 14px;
-  color: var(--text-color-primary);
+  color: var(--primary-text-color);
 }
 .copyright {
   display: flex;

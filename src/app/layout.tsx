@@ -11,6 +11,7 @@ import Footer from '@/components/Footer/Footer'
 
 const roboto = Roboto({
   subsets: ['latin'],
+  weight: '400',
 })
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
