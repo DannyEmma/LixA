@@ -224,9 +224,6 @@ export default function TextAnalyzer() {
   function isLetterFrequency(data: LetterFrequency | WordFrequency): data is LetterFrequency {
     return "letter" in data
   }
-  function isWordFrequency(data: LetterFrequency | WordFrequency): data is WordFrequency {
-    return "word" in data
-  }
 
   /**
    * Return the top densities of word or letter depending of the type param
