@@ -1,7 +1,7 @@
-'use client'
+"use client"
 
-import { RefObject, useEffect, useRef, useState } from 'react'
-import styles from './RangeControl.module.css'
+import { RefObject, useEffect, useState } from "react"
+import styles from "./RangeControl.module.css"
 
 export default function RangeControl({
   label,
@@ -33,14 +33,14 @@ export default function RangeControl({
   //-- Use to have 2 colors on the track of the input range --
   const updateProgressGradient = (el: HTMLInputElement, currentValue: number) => {
     const percent = ((currentValue - min) / (max - min)) * 100
-    el.style.setProperty('--progress-gradient', `${percent}%`)
+    el.style.setProperty("--progress-gradient", `${percent}%`)
   }
 
   return (
-    <div className={styles['range-control-container']}>
+    <div className={styles["range-control-container"]}>
       <label>{label}</label>
       <input ref={ref} onChange={handleChange} className={styles.customRangeInput} type="range" min={min} max={max} defaultValue={value} />
-      <output className={styles['valueDisplay']}>{`${value}%`}</output>
+      <output className={styles["valueDisplay"]}>{`${value}%`}</output>
     </div>
   )
 }
