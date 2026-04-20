@@ -1,6 +1,17 @@
 .header {
-  height: 60px;
   display: flex;
-  justify-content: space-between;
-  align-items: end;
+  align-items: center;
+  position: relative;
+  padding-top: 20px;
+}
+
+@media (max-width: 1023px) {
+  .header {
+    padding-top: 10px;
+  }
+
+  .logo {
+    width: 70px;
+    height: auto;
+  }
 }

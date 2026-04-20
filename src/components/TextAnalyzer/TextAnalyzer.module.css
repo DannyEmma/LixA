@@ -1,14 +1,23 @@
-.textarea {
-  resize: none;
+.textanalyser-container {
   width: 1200px;
-  height: 400px;
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+  align-items: flex-end;
+  margin: auto;
+}
+.textarea {
+  width: 100%;
+  min-height: 200px;
+  aspect-ratio: 3;
+  resize: none;
   border-radius: 20px;
   background: var(--textarea-color);
   border: none;
-  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0 0 0 1px var(--transparent-border);
   padding: 30px 40px;
   color: var(--primary-text-color);
-  font-size: 20px;
+  font-size: var(--font-secondary-title);
 }
 .textarea:focus {
   outline: none;
@@ -16,4 +25,62 @@
 .textarea::placeholder {
   color: var(--primary-text-color);
   opacity: 0.6;
+}
+
+.textarea + label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  position: relative;
+  color: var(--primary-text-color);
+  font-size: var(--font-body);
+  margin-right: 16px;
+  cursor: pointer;
+}
+.checkbox {
+  visibility: hidden;
+}
+.custom-checkbox {
+  border: 1px solid var(--primary-text-color);
+  width: 16px;
+  height: 16px;
+  border-radius: 4px;
+}
+.custom-checkbox::before {
+  content: '';
+  display: none;
+  width: 7px;
+  height: 3px;
+  border-left: 2px solid var(--primary-text-color);
+  border-bottom: 2px solid var(--primary-text-color);
+  transform: rotate(-45deg);
+  position: relative;
+  top: 3.5px;
+  left: 2.5px;
+}
+.checkbox:checked + .custom-checkbox::before {
+  display: block;
+}
+
+@media (max-width: 1279px) {
+  .textanalyser-container {
+    width: 100%;
+  }
+}
+
+@media (max-width: 1023px) {
+  .textanalyser-container {
+    gap: 16px;
+  }
+  .textarea {
+    padding: 20px 30px;
+  }
+}
+@media (max-width: 767px) {
+  .textanalyser-container {
+    width: 100%;
+  }
+  .textarea {
+    height: 380px;
+  }
 }

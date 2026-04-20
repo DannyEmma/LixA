@@ -34,9 +34,9 @@ export default function ThemeSwitcher() {
   }
 
   return (
-    <button>
-      {theme === 'dark' && <Image onClick={handleClick} className={styles.theme_switcher} src="/img/sun.svg" width={28} height={28} alt="Sun Icon" />}
-      {theme === 'light' && <Image onClick={handleClick} className={styles.theme_switcher} src="/img/moon.svg" width={25} height={25} alt="Moon Icon" />}
+    <button className={styles.button}>
+      {theme === 'dark' && <Image onClick={handleClick} className={`${styles['theme-icon']} ${styles['sun-icon']}`} src="/img/sun.svg" width={28} height={28} alt="Sun Icon" />}
+      {theme === 'light' && <Image onClick={handleClick} className={`${styles['theme-icon']} ${styles['moon-icon']}`} src="/img/moon.svg" width={25} height={25} alt="Moon Icon" />}
     </button>
   )
 }

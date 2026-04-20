@@ -1,49 +1,33 @@
-/* ----- Theme Colors ----- */
-:root {
-  --bg-gradient-url: url('/img/dark-gradient.svg');
-  --title-color: white;
-  --primary-text-color: #f2efe9;
-  --secondary-color: #97a33e;
-  --textarea-color: #629ba1;
-}
-.light-theme {
-  --bg-gradient-url: url('/img/light-gradient.svg');
-  --title-color: #2c2c2c;
-  --primary-text-color: #2c2c2c;
-  --textarea-color: #f1f7f8;
-}
-
-/* ----- Reset CSS ----- */
+/* ----- Reset Styles ----- */
 * {
   padding: 0;
   margin: 0;
   text-decoration: none;
   color: inherit;
-  user-select: none;
-  -webkit-user-select: none; /* Safari */
-  -moz-user-select: none; /* Firefox */
-  -ms-user-select: none; /* IE/Edge */
-}
-html,
-body {
-  height: 100%;
+  box-sizing: border-box;
+  font-family: inherit;
 }
 button {
   background: inherit;
   border: inherit;
 }
-textarea {
-  font-family: inherit;
-}
 
-/* ----- Global CSS ----- */
+/* ----- Global Styles ----- */
 body {
   background-image: var(--bg-gradient-url);
   background-size: cover;
+  background-repeat: no-repeat;
+  background-color: var(--bg-color);
 }
 .container {
   max-width: 1500px;
   margin: auto;
   height: 100%;
   padding: 0 20px;
+}
+
+@media (max-width: 767px) {
+  .container {
+    padding: 0 10px;
+  }
 }

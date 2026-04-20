@@ -1,0 +1,21 @@
+.spacer {
+  height: var(--desktop-height);
+  width: 100%;
+}
+.dev-mode {
+  border: 2px solid rgb(89, 255, 0);
+}
+
+/* ----- Tablet ----- */
+@media (max-width: 1023px) {
+  .spacer {
+    height: var(--tablet-height, var(--desktop-height));
+  }
+}
+
+/* ----- Mobile ----- */
+@media (max-width: 767px) {
+  .spacer {
+    height: var(--mobile-height, var(--tablet-height, var(--desktop-height)));
+  }
+}

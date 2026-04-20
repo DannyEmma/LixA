@@ -1,0 +1,16 @@
+.ai-comments {
+  background: var(--ai-wrapper-content-background);
+  border-radius: 8px;
+  padding: 16px;
+  padding-left: 32px;
+  line-height: 28px;
+  height: 100%;
+  margin-top: 12px;
+}
+.ai-comments strong {
+  font-weight: bold;
+  color: #97a33e;
+}
+.ai-comments li {
+  margin-bottom: 12px;
+}

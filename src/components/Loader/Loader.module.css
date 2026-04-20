@@ -1,0 +1,61 @@
+.textual-loader-container {
+  display: flex;
+  align-items: center;
+}
+
+/* HTML: <div class="loader"></div> */
+.textual-loader-container .loader {
+  transform: translateY(3px);
+  width: 15px;
+  aspect-ratio: 5;
+  --_g: no-repeat radial-gradient(circle closest-side, #2c2c2cf2 90%, #0400ff00);
+  background: var(--_g) 0% 50%, var(--_g) 50% 50%, var(--_g) 100% 50%;
+  background-size: calc(100% / 3) 100%;
+  animation: l7 1s infinite linear;
+}
+@keyframes l7 {
+  33% {
+    background-size: calc(100% / 3) 0%, calc(100% / 3) 100%, calc(100% / 3) 100%;
+  }
+  50% {
+    background-size: calc(100% / 3) 100%, calc(100% / 3) 0%, calc(100% / 3) 100%;
+  }
+  66% {
+    background-size: calc(100% / 3) 100%, calc(100% / 3) 100%, calc(100% / 3) 0%;
+  }
+}
+
+/* HTML: <div class="loader"></div> */
+.three-bars-loader-container {
+  display: flex;
+  justify-content: center;
+}
+.three-bars-loader-container .loader {
+  width: 45px;
+  aspect-ratio: 0.75;
+  background: var(--c) 0% 50%, var(--c) 50% 50%, var(--c) 100% 50%;
+  background-size: 20% 50%;
+  animation: l6 1s infinite linear;
+}
+
+.three-bars-loader-container .loader.black {
+  --c: no-repeat linear-gradient(rgba(0, 0, 0, 0.5) 0 0);
+}
+.three-bars-loader-container .loader.light {
+  --c: no-repeat linear-gradient(#ffffff40 0 0);
+}
+
+@keyframes l6 {
+  20% {
+    background-position: 0% 0%, 50% 50%, 100% 50%;
+  }
+  40% {
+    background-position: 0% 100%, 50% 0%, 100% 50%;
+  }
+  60% {
+    background-position: 0% 50%, 50% 100%, 100% 0%;
+  }
+  80% {
+    background-position: 0% 50%, 50% 50%, 100% 100%;
+  }
+}

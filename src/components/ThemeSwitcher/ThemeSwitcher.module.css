@@ -1,8 +1,23 @@
-.theme_switcher {
+.button {
+  position: absolute;
+  right: 0;
+}
+.theme-icon {
   transition: all 0.3s;
 }
-.theme_switcher:hover {
+
+.theme-icon:hover {
   width: 34px;
   height: 34px;
   cursor: pointer;
+}
+
+@media (max-width: 1023px) {
+  .theme-icon {
+    width: 18px;
+    height: auto;
+  }
+  .theme-icon:hover {
+    width: 23px;
+  }
 }

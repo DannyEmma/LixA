@@ -9,15 +9,23 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@mistralai/mistralai": "^1.7.2",
+    "franc": "^6.2.0",
     "next": "15.3.2",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-curved-text": "^3.0.1",
+    "react-dom": "^19.0.0",
+    "react-world-flags": "^1.6.0",
+    "recharts": "^2.15.3",
+    "zustand": "^5.0.5"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
     "@types/node": "^20",
     "@types/react": "^19",
+    "@types/react-curved-text": "^2.0.3",
     "@types/react-dom": "^19",
+    "@types/react-world-flags": "^1.6.0",
     "eslint": "^9",
     "eslint-config-next": "15.3.2",
     "typescript": "^5"

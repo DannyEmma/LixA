@@ -1,0 +1,59 @@
+/* ----- Theme Colors ----- */
+:root {
+  --bg-gradient-url: url('/img/dark-gradient.svg');
+  --bg-color: #033136;
+  --title-color: white;
+  --primary-text-color: #f2efe9;
+  --secondary-color: #97a33e;
+  --secondary-color-transparent: rgba(151, 163, 62, 0.9);
+  --textarea-color: #629ba1;
+
+  --gray-box-color: #777382;
+  --blue-box-color: #4282b3;
+  --orange-box-color: #e47011;
+  --red-box-color: #d13823;
+  --green-box-color: #49aba2;
+  --purple-box-color: #a94c77;
+
+  /* --ai-wrapper-gradient: linear-gradient(310deg, #04484e 0%, #033136 45%); */
+  --ai-wrapper-gradient: linear-gradient(118deg in oklab, rgba(3, 49, 54, 0.6) 54% 54%, 111%, rgba(9, 141, 156, 0.6) 162% 162%);
+  /* --ai-wrapper-reverse-gradient: linear-gradient(120deg, #04484e 0%, #033136 45%); */
+  --ai-wrapper-reverse-gradient: linear-gradient(-62deg in oklab, rgba(3, 49, 54, 0.6) 63% 63%, 107%, rgba(9, 141, 156, 0.6) 160% 160%);
+  --ai-wrapper-content-background: rgba(255, 255, 255, 0.9);
+
+  --transparent-border: rgba(0, 0, 0, 0.3);
+  --border-transparent-30-10: rgba(0, 0, 0, 0.3);
+  --range-control-track-off: #737373;
+  --resume-ai-secondary-color: #629ba1;
+  --ai-wrapper-border-transparent: rgba(255, 255, 255, 0.05);
+
+  --density-panel-bg-thead: rgba(3, 49, 54, 0.5);
+}
+.light-theme {
+  --bg-gradient-url: url('/img/light-gradient.svg');
+  --bg-color: #c0d7d9;
+  --title-color: #2c2c2c;
+  --primary-text-color: #2c2c2c;
+  --textarea-color: #f1f7f8;
+
+  --gray-box-color: rgba(119, 115, 130, 0.9);
+  --blue-box-color: rgba(66, 130, 179, 0.9);
+  --orange-box-color: rgba(228, 112, 17, 0.9);
+  --red-box-color: rgba(209, 55, 35, 0.9);
+  --green-box-color: rgba(73, 171, 161, 0.9);
+  --purple-box-color: rgba(169, 76, 119, 0.9);
+
+  /* --ai-wrapper-gradient: linear-gradient(310deg, rgba(188, 220, 223, 1) 0%, rgba(214, 229, 231, 1) 45%); */
+  --ai-wrapper-gradient: linear-gradient(118deg in oklab, rgba(255, 255, 255, 0.36) 54% 54%, 119%, rgba(9, 141, 156, 0.6) 172% 172%);
+  /* --ai-wrapper-reverse-gradient: linear-gradient(120deg, rgba(188, 220, 223, 1) 0%, rgba(214, 229, 231, 1) 45%); */
+  --ai-wrapper-reverse-gradient: linear-gradient(-62deg in oklab, rgba(255, 255, 255, 0.36) 60% 60%, 118%, rgba(9, 141, 156, 0.6) 159% 159%);
+  --ai-wrapper-content-background: #f1f7f8;
+
+  --transparent-border: rgba(0, 0, 0, 0.05);
+  --border-transparent-30-10: rgba(0, 0, 0, 0.1);
+  --range-control-track-off: white;
+  --resume-ai-secondary-color: #a1c3c7;
+  --ai-wrapper-border-transparent: rgba(255, 255, 255, 0.2);
+
+  --density-panel-bg-thead: rgba(255, 255, 255, 0.3);
+}

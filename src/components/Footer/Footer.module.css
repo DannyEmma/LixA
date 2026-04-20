@@ -1,10 +1,30 @@
 .footer {
   display: flex;
   justify-content: space-between;
-  font-size: 14px;
+  font-size: var(--font-small);
   color: var(--primary-text-color);
+  align-items: center;
+  padding: 20px 0;
 }
 .copyright {
   display: flex;
   gap: 3px;
+  line-height: 8px;
+}
+.copyright img {
+  transform: translateY(2px);
+}
+
+@media (max-width: 767px) {
+  .footer {
+    flex-direction: column;
+    justify-content: center;
+    gap: 16px;
+  }
+}
+
+@media (max-width: 400px) {
+  .copyright {
+    width: 260px;
+  }
 }

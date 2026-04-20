@@ -1,0 +1,85 @@
+.readability-index {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.readability-index output {
+  text-align: center;
+  color: #f2efe9;
+  font-weight: 500;
+  font-size: 20px;
+}
+.gauje {
+  --pointer-pos: -90deg;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  position: relative;
+  width: 100px;
+  height: 50px;
+  border-radius: 50px 50px 0 0;
+  background: conic-gradient(at bottom, #fb8c00 0deg 30deg, #e53935 30deg 60deg, #6a1b9a 30deg 60deg, #4fc3f7 270deg 300deg, #43a047 300deg 330deg, #ffeb3b 330deg 360deg);
+}
+
+/* -- Use to hide a part of the semi circle -- */
+.gauje::before {
+  content: '';
+  display: block;
+  width: 70px;
+  height: 35px;
+  background: var(--purple-box-color);
+  border-radius: 50px 50px 0 0;
+  position: absolute;
+  bottom: 0;
+  left: 15px;
+}
+
+.gauje-pointer {
+  position: relative;
+  bottom: 5px;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 38px solid #f2efe9;
+  z-index: 100;
+  transform: rotate(var(--pointer-pos));
+  transform-origin: center calc(38px + (8px / 2));
+  transition: all 300ms;
+}
+
+.gauje-pointer::before {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: -38px;
+  width: 10px;
+  height: 8px;
+  background-color: #f2efe9;
+  border-radius: 0 0 50px 50px;
+  z-index: 100;
+  transform: translate(-50%, 100%);
+}
+.gauje-pointer::after {
+  content: '';
+  display: block;
+  background: rgb(0, 0, 0);
+  position: absolute;
+  bottom: -43px;
+  left: -2px;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  z-index: 200;
+}
+
+/* Curved label */
+.gauje-pointer svg {
+  position: absolute;
+  font-size: 10px;
+  top: -33px;
+  left: -76px;
+  transform: rotate(23deg);
+}
+.gauje-pointer svg text {
+  fill: #f2efe9;
+  transform: translate(-14px, 9px) rotate(350deg);
+}

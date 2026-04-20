@@ -1,0 +1,68 @@
+.tool-tip-container {
+  display: inline-block;
+  position: relative;
+}
+.tool-tip {
+  display: block;
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  padding: 10px 20px;
+  background: white;
+  border-radius: 5px;
+  font-size: var(--font-small);
+  transform: translate(-50%, -100%);
+  width: 300px;
+}
+.tool-tip.left {
+  left: 0;
+  transform: translate(0, -100%);
+}
+.title {
+  font-weight: bold;
+  font-size: var(--font-secondary-title);
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  margin-bottom: 8px;
+}
+.tool-tip p {
+  color: black;
+  text-align: left;
+  line-height: 16px;
+}
+
+/* -- Show ToolTip -- */
+/* .icon:hover + .tool-tip {
+  display: block;
+}
+.icon:hover + .tool-tip::before {
+  display: block;
+} */
+
+/* -- ToolTip Arrow -- */
+.tool-tip::before {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  width: 15px;
+  height: 15px;
+  background: white;
+  transform: rotate(45deg) translateX(-50%);
+}
+.tool-tip.left::before {
+  left: 8%;
+}
+
+.icon {
+  cursor: pointer;
+}
+.hide-icon {
+  opacity: 0;
+}
+/* .inside-icon {
+} */

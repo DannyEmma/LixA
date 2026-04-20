@@ -1,4 +1,6 @@
 import '@/styles/global.css'
+import '@/styles/theme.css'
+import '@/styles/typography.css'
 //-- Dependancies --
 import { cookies } from 'next/headers'
 
@@ -11,7 +13,7 @@ import Footer from '@/components/Footer/Footer'
 
 const roboto = Roboto({
   subsets: ['latin'],
-  weight: '400',
+  weight: 'variable',
 })
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
