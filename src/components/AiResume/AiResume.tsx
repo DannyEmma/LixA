@@ -1,20 +1,20 @@
-'use client'
+"use client"
 
-import styles from './AiResume.module.css'
+import styles from "./AiResume.module.css"
 
-import { useRef, useState } from 'react'
-import useTextAnalysisStore from '@/stores/textAnalysis.store'
-import { MIN_CHAR_IA } from '@/app/lib/parameters'
+import { useRef, useState } from "react"
+import useTextAnalysisStore from "@/stores/textAnalysis.store"
+import { MIN_CHAR_IA } from "@/app/lib/parameters"
 
-import RangeControl from '@/components/RangeControl/RangeControl'
-import Loader from '@/components/Loader/Loader'
-import Toast from '@/components/Toast/Toast'
+import RangeControl from "@/components/RangeControl/RangeControl"
+import Loader from "@/components/Loader/Loader"
+import Toast from "@/components/Toast/Toast"
 
 export default function AiResume() {
   const { text } = useTextAnalysisStore()
   const inputRangeLengthRef = useRef<HTMLInputElement>(null)
   const inputRangeComplexity = useRef<HTMLInputElement>(null)
-  const [resume, setResume] = useState('')
+  const [resume, setResume] = useState("")
   const [isLoading, setIsLoading] = useState(false)
   const [showToast, setShowToast] = useState(false)
   const timeoutRef = useRef(null)
@@ -28,12 +28,12 @@ export default function AiResume() {
 
     setIsLoading(true)
 
-    fetch('/api/mistral-ai/resume', {
-      method: 'POST',
+    fetch("/api/mistral-ai/resume", {
+      method: "POST",
       body: JSON.stringify({ text, resumeLength: length, complexity }),
     })
       .then((response) => response.json())
-      .then((result) => setResume(result.response))
+      .then((result) => setResume(result.response ?? ""))
       .finally(() => setIsLoading(false))
   }
 
@@ -49,18 +49,18 @@ export default function AiResume() {
   }
 
   return (
-    <div className={styles['ai-resume-container']}>
+    <div className={styles["ai-resume-container"]}>
       <div className={styles.adjustment}>
         <RangeControl ref={inputRangeLengthRef} label="Longeur" min={5} max={50} defaultValue={30} />
-        <RangeControl ref={inputRangeComplexity} label="Complexité" min={0} max={100} defaultValue={50} />
+        <RangeControl ref={inputRangeComplexity} label="Complexité" min={5} max={100} defaultValue={50} />
         <button onClick={handleGenerate} disabled={text.length < MIN_CHAR_IA}>
           Générer
         </button>
       </div>
-      <div className={styles['resume-output']}>
+      <div className={styles["resume-output"]}>
         <div className={styles.header}>
           <p>Sortie du résumé : </p>
-          <button className={styles['copy-button']} onClick={handleCopy} disabled={text.length < MIN_CHAR_IA || !resume.length}>
+          <button className={styles["copy-button"]} onClick={handleCopy} disabled={text.length < MIN_CHAR_IA || !resume.length}>
             <svg width="21" height="24" viewBox="0 0 21 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <g clipPath="url(#clip0_190_123)">
                 <path
@@ -75,9 +75,17 @@ export default function AiResume() {
               </defs>
             </svg>
           </button>
-          <div className={styles['toast-container']}>{showToast && <Toast message="Copié !" />}</div>
+          <div className={styles["toast-container"]}>{showToast && <Toast message="Copié !" />}</div>
         </div>
-        <output>{isLoading ? <Loader variant="textual" message="Mistral prépare votre résumé" /> : resume ? resume : 'Cette zone contiendra le résumé après génération.'}</output>
+        <output>
+          {isLoading ? (
+            <Loader variant="textual" message="Mistral prépare votre résumé" />
+          ) : resume ? (
+            resume
+          ) : (
+            "Cette zone contiendra le résumé après génération."
+          )}
+        </output>
       </div>
     </div>
   )
